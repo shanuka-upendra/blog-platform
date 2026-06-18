@@ -38,10 +38,24 @@
                     <p class="font-interface-body text-interface-body text-secondary mb-8">
                         Upgrade to Premium to read the full story and access our entire library of exclusive content.
                     </p>
-                    <a href="/subscribe"
-                       class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-4 px-6 rounded-lg hover:opacity-90 transition-colors flex justify-center items-center gap-2 mb-4">
-                        Upgrade to Premium
-                    </a>
+                    
+                    {{-- Authentication-aware dynamic call to action buttons --}}
+                    <div class="mb-4">
+                        @auth
+                            <a href="/checkout"
+                               class="w-full py-4 px-6 rounded-lg bg-primary text-on-primary font-label-caps text-label-caps hover:opacity-90 active:translate-y-[2px] transition-all shadow-sm flex items-center justify-center gap-2">
+                                Upgrade to Premium
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                        @else
+                            <a href="/login"
+                               class="w-full py-4 px-6 rounded-lg bg-primary text-on-primary font-label-caps text-label-caps hover:opacity-90 transition-all shadow-sm flex items-center justify-center gap-2">
+                                Login to Upgrade
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </a>
+                        @endauth
+                    </div>
+
                     <p class="font-meta-sm text-meta-sm text-secondary">Cancel anytime.</p>
                 </div>
             </div>
