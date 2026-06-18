@@ -42,7 +42,7 @@ class PostController extends Controller
 
         $validated = $request->validate([
             'title'      => 'required|min:5|max:255',
-            'body'       => 'required|min:10',
+            'body' => 'required|string|min:10',
             'status'     => 'required|in:draft,published',
             'cover_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
