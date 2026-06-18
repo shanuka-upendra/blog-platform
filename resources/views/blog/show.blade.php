@@ -2,16 +2,53 @@
 <x-slot name="title">{{ $post->title }} - MyBlog</x-slot>
 
 <style>
-    .article-body h2 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; color: #151c27; }
-    .article-body h3 { font-size: 1.35rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #151c27; }
-    .article-body p { margin-bottom: 1.25rem; }
-    .article-body ul { list-style: disc; padding-left: 1.75rem; margin-bottom: 1.25rem; }
-    .article-body ol { list-style: decimal; padding-left: 1.75rem; margin-bottom: 1.25rem; }
-    .article-body li { margin-bottom: 0.4rem; }
-    .article-body blockquote { border-left: 4px solid #b61722; padding: 0.5rem 1.25rem; margin: 1.5rem 0; color: #575e70; font-style: italic; background: #f0f3ff; border-radius: 0 0.5rem 0.5rem 0; }
+    .article-body h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin: 2rem 0 1rem;
+        color: #151c27;
+        line-height: 1.3;
+    }
+    .article-body h3 {
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin: 1.5rem 0 0.75rem;
+        color: #151c27;
+    }
+    .article-body p {
+        margin-bottom: 1.25rem;
+        font-size: 20px;
+        line-height: 32px;
+        color: #151c27;
+    }
+    .article-body ul {
+        list-style: disc;
+        padding-left: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+    .article-body ol {
+        list-style: decimal;
+        padding-left: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+    .article-body li {
+        margin-bottom: 0.4rem;
+        font-size: 18px;
+        line-height: 1.7;
+        color: #151c27;
+    }
+    .article-body blockquote {
+        border-left: 4px solid #b61722;
+        padding: 0.75rem 1.25rem;
+        margin: 1.5rem 0;
+        color: #575e70;
+        font-style: italic;
+        background: #f0f3ff;
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
     .article-body strong { font-weight: 700; color: #151c27; }
-    .article-body em { font-style: italic; }
-    .article-body p:first-child::first-letter { font-size: 3.5rem; font-weight: 800; color: #b61722; float: left; line-height: 1; margin-right: 0.1em; margin-top: 0.05em; }
+    .article-body em     { font-style: italic; }
+    .article-body u      { text-decoration: underline; }
 </style>
 
 <div class="w-full py-section-gap px-gutter">
