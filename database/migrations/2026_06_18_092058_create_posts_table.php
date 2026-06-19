@@ -13,11 +13,23 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+
+            $table->foreignId('user_id')
+                ->constrained()
+                ->onDelete('cascade');
+
             $table->string('title');
+
             $table->longText('body');
+
+            // Cover image path or URL
+            $table->string('cover_image')->nullable();
+
             $table->boolean('is_premium')->default(false);
-            $table->enum('status', ['draft', 'published'])->default('draft');
+
+            $table->enum('status', ['draft', 'published'])
+                ->default('draft');
+
             $table->timestamps();
         });
     }
