@@ -184,6 +184,12 @@
 
             <div class="flex items-center gap-4">
                 @auth
+                @if(Auth::user()->is_admin)
+                <a href="/admin"
+                    class="h-full flex items-center font-label-caps text-label-caps text-red-500 font-bold hover:text-primary transition-colors">
+                    ⚙️ Admin
+                </a>
+                @endif
                 {{-- Premium Status Indicator or Go Premium Button --}}
                 @if(Auth::user()->is_premium)
                 <div class="inline-flex items-center gap-1 bg-[#fefce8] text-[#854d0e] border border-[#fef08a] px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase shadow-sm">

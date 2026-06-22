@@ -16,9 +16,10 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->is_admin) {
-            abort(403, 'Access denied. You must be an administrator to perform this action.');
+        if (!Auth::check() || !Auth::user()->is_admin) {
+            abort(403, 'Access denied.');
         }
+
         return $next($request);
     }
 }
