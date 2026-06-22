@@ -37,6 +37,7 @@ class User extends Authenticatable
         'email',
         'password',
         'is_premium',
+        'is_admin',
     ];
 
     protected $hidden = [
@@ -47,6 +48,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'is_premium'        => 'boolean',
+        'is_admin'          => 'boolean',
     ];
 
     // A user can have many posts
